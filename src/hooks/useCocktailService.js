@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { useEffectAfterMount } from "./useEffectAfterMount";
+import { useEffect, useState } from "react";
 import api from "../api";
 
 export const useCocktailService = () => {
@@ -7,7 +6,7 @@ export const useCocktailService = () => {
   const [isFetching, setIsFetching] = useState(false);
   const urls = Array(8).fill(`${import.meta.env.VITE_API_ENDPOINT}/random.php`);
 
-  useEffectAfterMount(() => {
+  useEffect(() => {
     setIsFetching(true);
     getRandomDrinks().then((cocktails) => {
       setCocktails(cocktails);
