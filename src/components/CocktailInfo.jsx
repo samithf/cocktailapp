@@ -23,7 +23,7 @@ const CocktailInfo = () => {
           <img
             src={cocktail.strDrinkThumb}
             alt={cocktail.strDrink}
-            className="object-cover aspect-square bg-gray-100 rounded-t-md md:w-[400px] md:h-[500px]"
+            className="object-cover aspect-square bg-gray-100 rounded-t-md md:w-[400px]"
           />
         </div>
         <div className="py-10 md:py-0 md:px-10">

@@ -23,7 +23,6 @@ const CocktailCard = ({ cocktail }) => {
           data-testid="cocktail-image"
         />
       </Link>
-
       <div className="p-3 flex items-center">
         <div>
           <p
