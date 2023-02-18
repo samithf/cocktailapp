@@ -1,21 +1,29 @@
 import React from "react";
 import { useAppContext } from "../hooks/useAppContext";
 import { HiHeart, HiOutlineHeart } from "react-icons/hi";
+import { Link } from "react-router-dom";
+import { slugify } from "../utils";
 
 const CocktailCard = ({ cocktail }) => {
   const { favourites, addToFavourite, removeFromFavourite } = useAppContext();
 
   return (
     <div
-      className="m-2 bg-white rounded-md border border-gray-300 cursor-pointer"
+      className="m-2 bg-white rounded-md border border-gray-300"
       data-testid="card"
     >
-      <img
-        src={cocktail.strDrinkThumb}
-        alt={cocktail.strDrink}
-        className="object-cover aspect-square bg-gray-100 rounded-t-md"
-        data-testid="cocktail-image"
-      />
+      <Link
+        to={`/drinks/${slugify(cocktail.strDrink)}/${cocktail.idDrink}`}
+        state={cocktail}
+      >
+        <img
+          src={cocktail.strDrinkThumb}
+          alt={cocktail.strDrink}
+          className="object-cover aspect-square bg-gray-100 rounded-t-md"
+          data-testid="cocktail-image"
+        />
+      </Link>
+
       <div className="p-3 flex items-center">
         <div>
           <p
